@@ -1,0 +1,34 @@
+name: .NET Core
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.100
+    - name: Build 
+      run: dotnet build --configuration Release
+    - name: Test C#
+      run: dotnet test ./tst/EventAggregation.CSharp.Tests/EventAggregation.CSharp.Tests.csproj
+    - name: Test F#
+      run: dotnet test ./tst/EventAggregation.Tests/EventAggregation.Tests.fsproj
+    - name: Build C# NuGet Package
+      run: 
+        dotnet pack ./src/EventAggregation.CSharp/EventAggregation.CSharp.csproj --configuration Release -o ./nuget
+    - name: Build F# Nuget Package
+      run:
+        dotnet pack ./src/EventAggregation/BitHack.fsproj --configuration Release -o ./nuget
+    - name: Deploy C# NuGet Package
+      run: 
+        dotnet nuget push /home/runner/work/SFX.EventAggregation/SFX.EventAggregation/nuget/SFX.EventAggregation.CSharp.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+    - name: Deploy F# NuGet Package
+      run:  
+        dotnet nuget push /home/runner/work/SFX.EventAggregation/SFX.EventAggregation/nuget/SFX.BitHack.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+
