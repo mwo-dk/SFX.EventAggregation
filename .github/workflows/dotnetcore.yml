@@ -24,11 +24,11 @@ jobs:
         dotnet pack ./src/EventAggregation.CSharp/EventAggregation.CSharp.csproj --configuration Release -o ./nuget
     - name: Build F# Nuget Package
       run:
-        dotnet pack ./src/EventAggregation/BitHack.fsproj --configuration Release -o ./nuget
+        dotnet pack ./src/EventAggregation/EventAggregation.fsproj --configuration Release -o ./nuget
     - name: Deploy C# NuGet Package
       run: 
         dotnet nuget push /home/runner/work/SFX.EventAggregation/SFX.EventAggregation/nuget/SFX.EventAggregation.CSharp.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
     - name: Deploy F# NuGet Package
       run:  
-        dotnet nuget push /home/runner/work/SFX.EventAggregation/SFX.EventAggregation/nuget/SFX.BitHack.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+        dotnet nuget push /home/runner/work/SFX.EventAggregation/SFX.EventAggregation/nuget/SFX.EventAggregation.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
 
