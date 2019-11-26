@@ -132,6 +132,7 @@ let isEventAggregatorRepositoryInitialized (repo: IEventAggregatorRepository) =
 type EventAggregatorInstance =
 | Anonymous
 | Named of string
+let named = Named
 let getEventAggregator instance (repo: IEventAggregatorRepository) = 
     match instance with
     | Anonymous -> repo.GetEventAggregator()
