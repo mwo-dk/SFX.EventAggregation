@@ -298,7 +298,7 @@ As mentioned, this library sits on top of, and can therefore seamlessly work tog
 As mentioned above, if this type of device is required in your monolith, it is recommended to utilize ```IEventAggregatorRepository```, which can be created, initialized and checked via the functions:
 
 * ```createEventAggregatorRepository: unit -> EventAggregatorRepository```
-* ```initializeEventAggregatorRepository: IEventAggregatorRepository -> unit````
+* ```initializeEventAggregatorRepository: IEventAggregatorRepository -> unit```
 * ```isEventAggregatorRepositoryInitialized: IEventAggregatorRepository -> bool```
 
 As mentioned above, getting (and creating if not found) an event aggregator is done in a named and an unnamed fashion. In this library, it is done via:
