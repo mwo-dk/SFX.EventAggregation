@@ -6,7 +6,7 @@
 
     <RootNamespace>SFX.EventAggregation</RootNamespace>
     <PackageId>SFX.EventAggregation</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <IsPackable>true</IsPackable>
 
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -17,6 +17,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/mwo-dk/SFX.EventAggregation</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mwo-dk/SFX.EventAggregation</RepositoryUrl>
+    <PackageIcon>dingir.png</PackageIcon>
     <PackageTags>event aggregation F#</PackageTags>
   </PropertyGroup>
 
@@ -24,6 +25,10 @@
     <Compile Include="Library.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="dingir.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+    
   <ItemGroup>
     <PackageReference Include="SFX.ROP" Version="1.0.2" />
   </ItemGroup>
