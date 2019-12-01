@@ -6,7 +6,9 @@
 
     <RootNamespace>SFX.EventAggregation</RootNamespace>
     <PackageId>SFX.EventAggregation</PackageId>
-    <Version>1.0.4</Version>
+    <Version>$(Version)</Version>
+    <FileVersion>$(Version)</FileVersion>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
     <IsPackable>true</IsPackable>
 
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
