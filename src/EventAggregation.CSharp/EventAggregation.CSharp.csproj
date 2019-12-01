@@ -6,7 +6,9 @@
 
     <RootNamespace>SFX.EventAggregation.CSharp</RootNamespace>
     <PackageId>SFX.EventAggregation.CSharp</PackageId>
-    <Version>1.0.4</Version>
+    <Version>$(Version)</Version>
+    <FileVersion>$(Version)</FileVersion>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
     <IsPackable>true</IsPackable>
 
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -22,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="dingir.png" Pack="true" PackagePath="\"/>
+    <None Include="dingir.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   
   <ItemGroup>
