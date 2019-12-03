@@ -1,0 +1,21 @@
+name: .NET Core
+
+on: push
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.0.100
+    - name: Build 
+      run: dotnet build --configuration Release
+    - name: Test C#
+      run: dotnet test ./tst/EventAggregation.CSharp.Tests/EventAggregation.CSharp.Tests.csproj
+    - name: Test F#
+      run: dotnet test ./tst/EventAggregation.Tests/EventAggregation.Tests.fsproj
