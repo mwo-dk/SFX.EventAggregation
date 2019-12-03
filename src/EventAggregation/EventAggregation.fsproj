@@ -28,11 +28,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="dingir.png" Pack="true" PackagePath="\"/>
+    <None Include="dingir.png" Pack="true" PackagePath="\" />
   </ItemGroup>
     
   <ItemGroup>
-    <PackageReference Include="SFX.ROP" Version="1.0.2" />
+    <PackageReference Include="SFX.ROP" Version="1.0.6" />
   </ItemGroup>
 
   <ItemGroup>
