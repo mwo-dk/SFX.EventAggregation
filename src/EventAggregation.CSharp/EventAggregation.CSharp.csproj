@@ -28,7 +28,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="SFX.Utils.CSharp" Version="1.0.11" />
+    <PackageReference Include="SFX.Utils.CSharp" Version="1.0.13" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.11.0" />
   </ItemGroup>
 
